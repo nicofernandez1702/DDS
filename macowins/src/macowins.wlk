@@ -3,19 +3,19 @@ class Prenda {
 	const property valor;
 	const tipo;
 	
-	method precio() = valor * tipo.precioPorTipo(self);
+	method precio() = valor * tipo.precioPorTipo(valor);
 	
 }
 
 class Nuevo {
 	
-	method precioPorTipo(prenda) = 1 ;
+	method precioPorTipo(precio) = 1 ;
 	
 }
 
 class Liquidacion {
 	
-	method precioPorTipo(prenda) =  0.5 ;
+	method precioPorTipo(precio) =  0.5 ;
 	
 }
 
@@ -23,7 +23,7 @@ class Promocion {
 	
 	var valorPromocional;
 	
-	method precioPorTipo(prenda) =    100 - (valorPromocional / prenda.valor())
+	method precioPorTipo(precio) =    100 - (valorPromocional / precio)
 	
 }
 
